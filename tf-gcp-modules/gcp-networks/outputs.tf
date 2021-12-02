@@ -1,7 +1,9 @@
-resource "google_compute_network" "this" {
-  name                    = var.name
-   description             = var.description
-   auto_create_subnetworks = var.auto_create_subnetworks
-   routing_mode            = var.routing_mode
-   project                 = var.project
- }
+output "gateway_ipv4" {
+    value = google_compute_network.this.gateway_ipv4
+  
+}
+
+output "self_link" {
+    value = google_compute_network.this.self_link
+  
+}
